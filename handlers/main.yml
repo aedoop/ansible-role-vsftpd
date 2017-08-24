@@ -1,2 +1,7 @@
 ---
 # handlers file for vsftpd
+
+- name: Restart firewalld
+  systemd:
+    name: firewalld
+    state: restarted

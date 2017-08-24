@@ -6,10 +6,6 @@
     name: vsftpd
     state: present
 
-- name: Allow vsftpd service through firewall
-  firewalld: service=vsftpd permanent=true state=enabled
-  #notify: Restart firewalld
-
 - name: Configure vsftpd
   template:   
     src: vsftpd.conf.j2 
@@ -22,3 +18,8 @@
     name: vsftpd
     state: started
     enabled: True
+
+- name: Stop firewalld service
+  systemd:
+    name: firewalld
+    state: stopped

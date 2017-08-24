@@ -1,0 +1,6 @@
+[vsftpd]
+10.0.228.101
+
+[vsftpd:vars]
+ansible_ssh_user=root
+ansible_ssh_pass=wzstiger
